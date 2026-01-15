@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://co2n8nlbum5r3"]
+
+[ext_resource type="Shader" uid="uid://cuphc06fg124t" path="res://wall_examples/checkerboard_shader.gdshader" id="1_o7q03"]
+[ext_resource type="PackedScene" uid="uid://bqp62ip8scnov" path="res://player/player.tscn" id="2_ah8gq"]
+[ext_resource type="PackedScene" uid="uid://p3dmrmlnqfu0" path="res://wall_examples/wall_capsule_collision.tscn" id="3_y5x4s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ah8gq"]
+render_priority = 0
+shader = ExtResource("1_o7q03")
+shader_parameter/albedo = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_y5x4s"]
+material = SubResource("ShaderMaterial_ah8gq")
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="Environment" id="Environment_y5x4s"]
+
+[node name="ExampleLevel" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("2_ah8gq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="FloorMesh" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+mesh = SubResource("BoxMesh_y5x4s")
+skeleton = NodePath("../..")
+
+[node name="Walls" type="Node3D" parent="Meshes"]
+
+[node name="WallCapsuleCollision" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1, -5)
+
+[node name="WallCapsuleCollision2" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2, 1, -5)
+
+[node name="WallCapsuleCollision3" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 1, -5)
+
+[node name="WallCapsuleCollision4" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 1, -5)
+
+[node name="WallCapsuleCollision5" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4, 1, -5)
+
+[node name="WallCapsuleCollision6" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5, 1, 0)
+
+[node name="WallCapsuleCollision7" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5, 1, 2)
+
+[node name="WallCapsuleCollision8" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5, 1, 4)
+
+[node name="WallCapsuleCollision9" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5, 1, -2)
+
+[node name="WallCapsuleCollision10" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5, 1, -4)
+
+[node name="WallCapsuleCollision11" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, 0)
+
+[node name="WallCapsuleCollision12" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, 2)
+
+[node name="WallCapsuleCollision13" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, 4)
+
+[node name="WallCapsuleCollision14" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, -2)
+
+[node name="WallCapsuleCollision15" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, -4)
+
+[node name="WallCapsuleCollision16" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 1, 5)
+
+[node name="WallCapsuleCollision17" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2, 1, 5)
+
+[node name="WallCapsuleCollision18" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 1, 5)
+
+[node name="WallCapsuleCollision19" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 1, 5)
+
+[node name="WallCapsuleCollision20" parent="Meshes/Walls" instance=ExtResource("3_y5x4s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4, 1, 5)
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 0.113151245, 0.9935778, 0, -0.9935778, 0.113151245, 0, 5, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_y5x4s")

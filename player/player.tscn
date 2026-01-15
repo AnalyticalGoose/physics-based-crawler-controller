@@ -4,16 +4,14 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kqu6x"]
 
-[node name="Player" type="Node3D" node_paths=PackedStringArray("front_collision_ray", "back_collision_ray", "left_collision_ray", "right_collision_ray")]
+[node name="Player" type="Node3D" node_paths=PackedStringArray("_front_collision_ray", "_back_collision_ray", "_left_collision_ray", "_right_collision_ray")]
 script = ExtResource("1_oul6g")
-front_collision_ray = NodePath("FrontCollisionRay")
-back_collision_ray = NodePath("BackCollisionRay")
-left_collision_ray = NodePath("LeftCollisionRay")
-right_collision_ray = NodePath("RightCollisionRay")
+_front_collision_ray = NodePath("FrontCollisionRay")
+_back_collision_ray = NodePath("BackCollisionRay")
+_left_collision_ray = NodePath("LeftCollisionRay")
+_right_collision_ray = NodePath("RightCollisionRay")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-collision_layer = 17
-collision_mask = 17
 gravity_scale = 0.0
 lock_rotation = true
 
@@ -25,9 +23,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
 fov = 90.0
 
 [node name="FrontCollisionRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -2)
 
 [node name="BackCollisionRay" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 2)
 
 [node name="LeftCollisionRay" type="RayCast3D" parent="."]
+target_position = Vector3(-2, 0, 0)
 
 [node name="RightCollisionRay" type="RayCast3D" parent="."]
+target_position = Vector3(2, 0, 0)
