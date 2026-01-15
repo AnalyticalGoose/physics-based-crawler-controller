@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://p3dmrmlnqfu0"]
+
+[ext_resource type="Shader" uid="uid://cuphc06fg124t" path="res://wall_examples/checkerboard_shader.gdshader" id="1_0m305"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0m305"]
+render_priority = 0
+shader = ExtResource("1_0m305")
+shader_parameter/albedo = Color(0.6, 0.6, 0.6, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ouc7l"]
+material = SubResource("ShaderMaterial_0m305")
+size = Vector3(2, 2, 0.2)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cqe81"]
+radius = 0.1
+
+[node name="WallCapsuleCollision" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_ouc7l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_cqe81")
